@@ -1,7 +1,17 @@
+package com.squaregps.interview;
+
 import java.time.ZonedDateTime;
+import java.util.Objects;
 
-public class LocMessage {
+/**
+ * Геолокационное сообщение, полученное с устройства (GPS-маячок или иное).
+ * {@code null} в поле означает отсутствие данных во входящем сообщении.
+ */
+public class LocationMessage {
 
+    /**
+     * Время отправки сообщения (Timestamp) или фиксации координат, UTC+0
+     */
     private ZonedDateTime dateTime;
 
     /**
@@ -19,8 +29,14 @@ public class LocMessage {
      */
     private Integer altitude;
 
+    /**
+     * Азимут, градусы
+     */
     private Integer angle;
 
+    /**
+     * Количество спутников
+     */
     private Integer satellites;
 
     /**
@@ -28,12 +44,21 @@ public class LocMessage {
      */
     private Integer speed;
 
+    /**
+     * Состояние дискретного входа 1
+     */
     private Boolean digitalInputStatus1;
+
+    /**
+     * Состояние дискретного входа 2
+     */
     private Boolean digitalInputStatus2;
+
     /**
      * Напряжение на аналоговом входе 1, В
      */
     private Double analogInput1;
+
     /**
      * Уровень сигнала GSM, 1-5
      */
@@ -126,5 +151,49 @@ public class LocMessage {
     public void setGsmLevel(Integer gsmLevel) {
         this.gsmLevel = gsmLevel;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LocationMessage that = (LocationMessage) o;
+        return Objects.equals(dateTime, that.dateTime) &&
+                Objects.equals(longitude, that.longitude) &&
+                Objects.equals(latitude, that.latitude) &&
+                Objects.equals(altitude, that.altitude) &&
+                Objects.equals(angle, that.angle) &&
+                Objects.equals(satellites, that.satellites) &&
+                Objects.equals(speed, that.speed) &&
+                Objects.equals(digitalInputStatus1, that.digitalInputStatus1) &&
+                Objects.equals(digitalInputStatus2, that.digitalInputStatus2) &&
+                Objects.equals(analogInput1, that.analogInput1) &&
+                Objects.equals(gsmLevel, that.gsmLevel);
+    }
+
+    @Override
+    public int hashCode() {
+        //noinspection ObjectInstantiationInEqualsHashCode
+        return Objects.hash(dateTime, longitude, latitude, altitude, angle, satellites, speed,
+                digitalInputStatus1, digitalInputStatus2, analogInput1, gsmLevel);
+    }
+
+    @Override
+    public String toString() {
+        return "LocationMessage{" +
+                "dateTime=" + dateTime +
+                ", longitude=" + longitude +
+                ", latitude=" + latitude +
+                ", altitude=" + altitude +
+                ", angle=" + angle +
+                ", satellites=" + satellites +
+                ", speed=" + speed +
+                ", digitalInputStatus1=" + digitalInputStatus1 +
+                ", digitalInputStatus2=" + digitalInputStatus2 +
+                ", analogInput1=" + analogInput1 +
+                ", gsmLevel=" + gsmLevel +
+                '}';
+    }
+
+
 }
 
