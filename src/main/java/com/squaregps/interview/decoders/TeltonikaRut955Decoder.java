@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Декодер сообщений для <a href="https://wiki.teltonika.lt/view/RUT955_Protocols">
+ * Декодер сообщений для <a href="https://wiki.teltonika-networks.com/view/RUT955_GPS_Protocols">
  * протокола Teltonika RUT955 (кодек 8).</a>
  */
 public class TeltonikaRut955Decoder implements MessageDecoder {
