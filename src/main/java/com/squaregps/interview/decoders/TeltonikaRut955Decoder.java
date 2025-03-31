@@ -20,7 +20,7 @@ public class TeltonikaRut955Decoder implements MessageDecoder {
     @Override
     public List<LocationMessage> decode(@Nonnull ByteBuffer buf) {
 
-        // TODO implements me
+        // TODO implement me
 
         return Collections.emptyList();
     }
