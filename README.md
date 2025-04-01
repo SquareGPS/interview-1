@@ -1,6 +1,7 @@
-# Задание на парсинг сообщений для протокола Teltonika RUT955 (кодек 8)
+# Parsing Messages for Teltonika RUT955 Protocol (Codec 8)
 
-[Документация по протоколу](https://wiki.teltonika-networks.com/view/RUT955_GPS_Protocols)
+Protocol documentation: https://wiki.teltonika-networks.com/view/RUT955_GPS_Protocols
 
-Необходимо реализовать декодирование сообщения (см. класс TeltonikaRut955Decoder) 
-и дополнить тесты для проверки значений I/O Elements.
+Your task is to implement message decoding (see the [TeltonikaRut955Decoder](/src/main/java/com/squaregps/interview/decoders/TeltonikaRut955Decoder.java) class) and extend the tests to verify the values of I/O Elements.
+
+Please submit the completed assignment as a compressed archive via email to the HR manager. We kindly ask you not to clone the repository as public or share your solution on public platforms such as GitHub or any other open-source resources.
