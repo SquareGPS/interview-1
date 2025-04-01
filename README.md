@@ -4,4 +4,4 @@ Protocol documentation: https://wiki.teltonika-networks.com/view/RUT955_GPS_Prot
 
 Your task is to implement message decoding (see the [TeltonikaRut955Decoder](/src/main/java/com/squaregps/interview/decoders/TeltonikaRut955Decoder.java) class) and extend the tests to verify the values of I/O Elements.
 
-Please submit the completed assignment as a compressed archive via email to the HR manager. We kindly ask you not to clone the repository as public or share your solution on public platforms such as GitHub or any other open-source resources.
+Please submit the completed assignment as a compressed archive via email to the HR manager. We kindly ask you not to make the repository clone or share your solution on platforms such as GitHub or any other open-source resources.
