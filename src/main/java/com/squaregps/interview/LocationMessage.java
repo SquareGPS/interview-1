@@ -4,66 +4,25 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 
 /**
- * Геолокационное сообщение, полученное с устройства (GPS-маячок или иное).
- * {@code null} в поле означает отсутствие данных во входящем сообщении.
+ * A geolocation message received from a device (GPS tracker or similar).
+ * {@code null} in a field indicates missing data in the incoming message.
  */
 public class LocationMessage {
-
-    /**
-     * Время отправки сообщения (Timestamp) или фиксации координат, UTC+0
-     */
     private ZonedDateTime dateTime;
-
-    /**
-     * Долгота, градусы
-     */
-    private Double longitude;
-
-    /**
-     * Широта, градусы
-     */
     private Double latitude;
-
-    /**
-     * Высота, м
-     */
+    private Double longitude;
     private Integer altitude;
-
-    /**
-     * Азимут, градусы
-     */
     private Integer angle;
-
-    /**
-     * Количество спутников
-     */
     private Integer satellites;
-
-    /**
-     * Скорость, км/ч
-     */
     private Integer speed;
-
-    /**
-     * Состояние дискретного входа 1
-     */
     private Boolean digitalInputStatus1;
-
-    /**
-     * Состояние дискретного входа 2
-     */
     private Boolean digitalInputStatus2;
-
-    /**
-     * Напряжение на аналоговом входе 1, В
-     */
     private Double analogInput1;
-
-    /**
-     * Уровень сигнала GSM, 1-5
-     */
     private Integer gsmLevel;
 
+    /**
+     * Time the message was sent (Timestamp) or the coordinates were recorded, in UTC+0
+     */
     public ZonedDateTime getDateTime() {
         return dateTime;
     }
@@ -72,14 +31,9 @@ public class LocationMessage {
         this.dateTime = dateTime;
     }
 
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
+    /**
+     * Latitude, degrees
+     */
     public Double getLatitude() {
         return latitude;
     }
@@ -88,6 +42,20 @@ public class LocationMessage {
         this.latitude = latitude;
     }
 
+    /**
+     * Longitude, degrees
+     */
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    /**
+     * Altitude, meters
+     */
     public Integer getAltitude() {
         return altitude;
     }
@@ -96,6 +64,9 @@ public class LocationMessage {
         this.altitude = altitude;
     }
 
+    /**
+     * Azimuth (heading), degrees
+     */
     public Integer getAngle() {
         return angle;
     }
@@ -104,6 +75,9 @@ public class LocationMessage {
         this.angle = angle;
     }
 
+    /**
+     * Satellites amount
+     */
     public Integer getSatellites() {
         return satellites;
     }
@@ -112,6 +86,9 @@ public class LocationMessage {
         this.satellites = satellites;
     }
 
+    /**
+     * Speed, km/h
+     */
     public Integer getSpeed() {
         return speed;
     }
@@ -120,6 +97,9 @@ public class LocationMessage {
         this.speed = speed;
     }
 
+    /**
+     * State of the digital input 1
+     */
     public Boolean getDigitalInputStatus1() {
         return digitalInputStatus1;
     }
@@ -128,6 +108,9 @@ public class LocationMessage {
         this.digitalInputStatus1 = digitalInputStatus1;
     }
 
+    /**
+     * State of the digital input 2
+     */
     public Boolean getDigitalInputStatus2() {
         return digitalInputStatus2;
     }
@@ -136,6 +119,9 @@ public class LocationMessage {
         this.digitalInputStatus2 = digitalInputStatus2;
     }
 
+    /**
+     * Analog input 1 voltage, volts
+     */
     public Double getAnalogInput1() {
         return analogInput1;
     }
@@ -144,6 +130,9 @@ public class LocationMessage {
         this.analogInput1 = analogInput1;
     }
 
+    /**
+     * GSM signal level, 1-5
+     */
     public Integer getGsmLevel() {
         return gsmLevel;
     }
@@ -158,16 +147,16 @@ public class LocationMessage {
         if (o == null || getClass() != o.getClass()) return false;
         LocationMessage that = (LocationMessage) o;
         return Objects.equals(dateTime, that.dateTime) &&
-                Objects.equals(longitude, that.longitude) &&
-                Objects.equals(latitude, that.latitude) &&
-                Objects.equals(altitude, that.altitude) &&
-                Objects.equals(angle, that.angle) &&
-                Objects.equals(satellites, that.satellites) &&
-                Objects.equals(speed, that.speed) &&
-                Objects.equals(digitalInputStatus1, that.digitalInputStatus1) &&
-                Objects.equals(digitalInputStatus2, that.digitalInputStatus2) &&
-                Objects.equals(analogInput1, that.analogInput1) &&
-                Objects.equals(gsmLevel, that.gsmLevel);
+               Objects.equals(longitude, that.longitude) &&
+               Objects.equals(latitude, that.latitude) &&
+               Objects.equals(altitude, that.altitude) &&
+               Objects.equals(angle, that.angle) &&
+               Objects.equals(satellites, that.satellites) &&
+               Objects.equals(speed, that.speed) &&
+               Objects.equals(digitalInputStatus1, that.digitalInputStatus1) &&
+               Objects.equals(digitalInputStatus2, that.digitalInputStatus2) &&
+               Objects.equals(analogInput1, that.analogInput1) &&
+               Objects.equals(gsmLevel, that.gsmLevel);
     }
 
     @Override
@@ -180,18 +169,18 @@ public class LocationMessage {
     @Override
     public String toString() {
         return "LocationMessage{" +
-                "dateTime=" + dateTime +
-                ", longitude=" + longitude +
-                ", latitude=" + latitude +
-                ", altitude=" + altitude +
-                ", angle=" + angle +
-                ", satellites=" + satellites +
-                ", speed=" + speed +
-                ", digitalInputStatus1=" + digitalInputStatus1 +
-                ", digitalInputStatus2=" + digitalInputStatus2 +
-                ", analogInput1=" + analogInput1 +
-                ", gsmLevel=" + gsmLevel +
-                '}';
+               "dateTime=" + dateTime +
+               ", longitude=" + longitude +
+               ", latitude=" + latitude +
+               ", altitude=" + altitude +
+               ", angle=" + angle +
+               ", satellites=" + satellites +
+               ", speed=" + speed +
+               ", digitalInputStatus1=" + digitalInputStatus1 +
+               ", digitalInputStatus2=" + digitalInputStatus2 +
+               ", analogInput1=" + analogInput1 +
+               ", gsmLevel=" + gsmLevel +
+               '}';
     }
 
 

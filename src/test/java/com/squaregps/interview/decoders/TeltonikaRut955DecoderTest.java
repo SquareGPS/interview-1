@@ -12,10 +12,9 @@ import static com.squaregps.interview.tools.HexUtils.hexToByteBuffer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test for {@link TeltonikaRut955Decoder}
+ * Tests for {@link TeltonikaRut955Decoder}
  */
 class TeltonikaRut955DecoderTest {
-
     private final MessageDecoder decoder = new TeltonikaRut955Decoder();
 
     @Test
@@ -30,7 +29,7 @@ class TeltonikaRut955DecoderTest {
         List<LocationMessage> messages = decoder.decode(data);
         assertEquals(4, messages.size());
 
-        LocationMessage m = messages.get(0);
+        LocationMessage m = messages.getFirst();
         assertEquals(ZonedDateTime.parse("2017-05-18T06:38:16Z"), m.getDateTime());
         assertEquals(23.8802085, m.getLongitude(), 1.0e-7);
         assertEquals(54.8748739, m.getLatitude(), 1.0e-7);

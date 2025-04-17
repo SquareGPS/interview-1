@@ -1,0 +1,10 @@
+# Any files should be left untouched by default
+* text=false
+* -text
+
+# Diff settings
+*.java          diff=java   working-tree-encoding=UTF-8
+
+# Exclude files from exporting
+.gitattributes  export-ignore
+.gitignore      export-ignore
